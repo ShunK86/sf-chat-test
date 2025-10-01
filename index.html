@@ -2,12 +2,32 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>チャット実験サイト</title>
   </head>
   <body>
     <h2>Salesforce 組み込みチャットテスト</h2>
 	<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DgL000000V4k8',
+				'OtherSiteTestService',
+				'https://orgfarm-c2599732fa-dev-ed.develop.my.site.com/ESWOtherSiteTestService1745549523567',
+				{
+					scrt2URL: 'https://orgfarm-c2599732fa-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-c2599732fa-dev-ed.develop.my.site.com/ESWOtherSiteTestService1745549523567/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+	<!-- <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -25,10 +45,11 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://orgfarm-c2599732fa-dev-ed.develop.my.site.com/ESWBotTestService1747900893845/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='https://orgfarm-c2599732fa-dev-ed.develop.my.site.com/ESWBotTestService1747900893845/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script> -->
 
   </body>
 </html>
+
 
 
 
